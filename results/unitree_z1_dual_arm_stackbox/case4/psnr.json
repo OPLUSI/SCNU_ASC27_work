@@ -1,0 +1,5 @@
+{
+    "gt_video": "/root/autodl-tmp/asc27/ASC26-Embodied-World-Model-Optimization-main/unitree_z1_dual_arm_stackbox/case4/unitree_z1_dual_arm_stackbox_case4.mp4",
+    "pred_video": "/root/asc27_system_results/optimization_runs/opt_amp_fastio_gpuaccum_nozero/unitree_z1_dual_arm_stackbox/case4/inference/35_full_fs4.mp4",
+    "psnr": 25.39546430734213
+}

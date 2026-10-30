@@ -1,0 +1,10 @@
+{
+  "scope": "copied source; unused upstream files are preserved without speculative fixes",
+  "findings": [
+    {
+      "file": "code/unifolm-world-model-action/src/unifolm_wma/utils/projector.py",
+      "line": 90,
+      "message": "invalid syntax. Maybe you meant '==' or ':=' instead of '='?"
+    }
+  ]
+}

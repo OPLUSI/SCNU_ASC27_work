@@ -1,0 +1,123 @@
+HPCG-Benchmark version: 3.0
+Release date: November 11, 2015
+Machine Summary: 
+  Distributed Processes: 1
+  Threads per processes: 1
+Global Problem Dimensions: 
+  Global nx: 16
+  Global ny: 16
+  Global nz: 16
+Processor Dimensions: 
+  npx: 1
+  npy: 1
+  npz: 1
+Local Domain Dimensions: 
+  nx: 16
+  ny: 16
+  nz: 16
+########## Problem Summary  ##########: 
+Setup Information: 
+  Setup Time: 0.00594989
+Linear System Information: 
+  Number of Equations: 4096
+  Number of Nonzero Terms: 97336
+Multigrid Information: 
+  Number of coarse grid levels: 3
+  Coarse Grids: 
+    Grid Level: 1
+    Number of Equations: 512
+    Number of Nonzero Terms: 10648
+    Number of Presmoother Steps: 1
+    Number of Postsmoother Steps: 1
+    Grid Level: 2
+    Number of Equations: 64
+    Number of Nonzero Terms: 1000
+    Number of Presmoother Steps: 1
+    Number of Postsmoother Steps: 1
+    Grid Level: 3
+    Number of Equations: 8
+    Number of Nonzero Terms: 64
+    Number of Presmoother Steps: 1
+    Number of Postsmoother Steps: 1
+########## Memory Use Summary  ##########: 
+Memory Use Information: 
+  Total memory used for data (Gbytes): 0.00293718
+  Memory used for OptimizeProblem data (Gbytes): 0
+  Bytes per equation (Total memory / Number of Equations): 717.084
+  Memory used for linear system and CG (Gbytes): 0.00258494
+  Coarse Grids: 
+    Grid Level: 1
+    Memory used: 0.000308128
+    Grid Level: 2
+    Memory used: 3.888e-05
+    Grid Level: 3
+    Memory used: 5.224e-06
+########## V&V Testing Summary  ##########: 
+Spectral Convergence Tests: 
+  Result: PASSED
+  Unpreconditioned: 
+    Maximum iteration count: 11
+    Expected iteration count: 12
+  Preconditioned: 
+    Maximum iteration count: 1
+    Expected iteration count: 2
+Departure from Symmetry |x'Ay-y'Ax|/(2*||x||*||A||*||y||)/epsilon: 
+  Result: PASSED
+  Departure for SpMV: 6.29632e-05
+  Departure for MG: 3.71658e-06
+########## Iterations Summary  ##########: 
+Iteration Count Information: 
+  Result: PASSED
+  Reference CG iterations per set: 50
+  Optimized CG iterations per set: 50
+  Total number of reference iterations: 53200
+  Total number of optimized iterations: 53200
+########## Reproducibility Summary  ##########: 
+Reproducibility Information: 
+  Result: PASSED
+  Scaled residual mean: 3.66234e-41
+  Scaled residual variance: 0
+########## Performance Summary (times in sec) ##########: 
+Benchmark Time Summary: 
+  Optimization phase: 1.52e-07
+  DDOT: 0.570967
+  WAXPBY: 0.191557
+  SpMV: 3.02151
+  MG: 21.3212
+  Total: 25.1228
+Floating Point Operations Summary: 
+  Raw DDOT: 1.31616e+09
+  Raw WAXPBY: 1.31616e+09
+  Raw SpMV: 1.05637e+10
+  Raw MG: 5.79931e+10
+  Total: 7.11891e+10
+  Total with convergence overhead: 7.11891e+10
+GB/s Summary: 
+  Raw Read B/W: 17.5198
+  Raw Write B/W: 4.05221
+  Raw Total B/W: 21.572
+  Total with convergence and optimization phase overhead: 21.0417
+GFLOP/s Summary: 
+  Raw DDOT: 2.30514
+  Raw WAXPBY: 6.87085
+  Raw SpMV: 3.49616
+  Raw MG: 2.71997
+  Raw Total: 2.83364
+  Total with convergence overhead: 2.83364
+  Total with convergence and optimization phase overhead: 2.76399
+User Optimization Overheads: 
+  Optimization phase time (sec): 1.52e-07
+  Optimization phase time vs reference SpMV+MG time: 0.000372114
+DDOT Timing Variations: 
+  Min DDOT MPI_Allreduce time: 0.0309976
+  Max DDOT MPI_Allreduce time: 0.0309976
+  Avg DDOT MPI_Allreduce time: 0.0309976
+__________ Final Summary __________: 
+  HPCG result is VALID with a GFLOP/s rating of: 2.76399
+      HPCG 2.4 Rating (for historical value) is: 2.83364
+  Reference version of ComputeDotProduct used: Performance results are most likely suboptimal
+  Reference version of ComputeSPMV used: Performance results are most likely suboptimal
+  Reference version of ComputeMG used: Performance results are most likely suboptimal
+  Reference version of ComputeWAXPBY used: Performance results are most likely suboptimal
+  Results are valid but execution time (sec) is: 25.1228
+       Official results execution time (sec) must be at least: 1800

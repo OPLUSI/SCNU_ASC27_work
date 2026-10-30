@@ -1,0 +1,24 @@
+{
+  "source_video": "results/unitree_z1_dual_arm_stackbox/case1/5_full_fs4.mp4",
+  "video_sha256": "f497997dcf4bc044513acbdebc1c963720f2686cd897a04341e0ccde2100fba5",
+  "fps": 8.0,
+  "frame_count": 112,
+  "indexing": "zero-based",
+  "frames": [
+    {
+      "file": "frame_first.png",
+      "zero_based_frame": 0,
+      "time_seconds": 0.0
+    },
+    {
+      "file": "frame_middle.png",
+      "zero_based_frame": 56,
+      "time_seconds": 7.0
+    },
+    {
+      "file": "frame_last.png",
+      "zero_based_frame": 111,
+      "time_seconds": 13.875
+    }
+  ]
+}

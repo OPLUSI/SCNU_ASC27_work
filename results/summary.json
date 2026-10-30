@@ -1,0 +1,58 @@
+[
+  {
+    "scenario": "unitree_z1_dual_arm_stackbox",
+    "case_id": 1,
+    "time_before_optim": 923.513,
+    "time_after_optim": 378.977,
+    "psnr": 22.845099732576923
+  },
+  {
+    "scenario": "unitree_z1_dual_arm_stackbox",
+    "case_id": 2,
+    "time_before_optim": 924.762,
+    "time_after_optim": 383.307,
+    "psnr": 24.921460460540544
+  },
+  {
+    "scenario": "unitree_z1_dual_arm_stackbox",
+    "case_id": 3,
+    "time_before_optim": 904.09,
+    "time_after_optim": 380.55,
+    "psnr": 26.246254742688937
+  },
+  {
+    "scenario": "unitree_z1_dual_arm_stackbox",
+    "case_id": 4,
+    "time_before_optim": 914.485,
+    "time_after_optim": 380.109,
+    "psnr": 25.39546430734213
+  },
+  {
+    "scenario": "unitree_z1_dual_arm_cleanup_pencils",
+    "case_id": 1,
+    "time_before_optim": 1017.967,
+    "time_after_optim": 429.452,
+    "psnr": 20.31014256970248
+  },
+  {
+    "scenario": "unitree_z1_dual_arm_cleanup_pencils",
+    "case_id": 2,
+    "time_before_optim": 1014.397,
+    "time_after_optim": 425.552,
+    "psnr": 22.92148703280887
+  },
+  {
+    "scenario": "unitree_z1_dual_arm_cleanup_pencils",
+    "case_id": 3,
+    "time_before_optim": 1016.892,
+    "time_after_optim": 425.277,
+    "psnr": 20.022928644849355
+  },
+  {
+    "scenario": "unitree_z1_dual_arm_cleanup_pencils",
+    "case_id": 4,
+    "time_before_optim": 1013.712,
+    "time_after_optim": 425.346,
+    "psnr": 22.039336997828528
+  }
+]

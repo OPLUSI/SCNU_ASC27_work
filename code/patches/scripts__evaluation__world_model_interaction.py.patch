@@ -1,0 +1,95 @@
+--- a/scripts/evaluation/world_model_interaction.py
++++ b/scripts/evaluation/world_model_interaction.py
+@@ -1,4 +1,5 @@
+ import argparse, os, glob
++from contextlib import nullcontext
+ import pandas as pd
+ import random
+ import torch
+@@ -574,20 +575,22 @@
+ 
+                 # Use world-model in policy to generate action
+                 print(f'>>> Step {itr}: generating actions ...')
+-                pred_videos_0, pred_actions, _ = image_guided_synthesis_sim_mode(
+-                    model,
+-                    sample['instruction'],
+-                    observation,
+-                    noise_shape,
+-                    action_cond_step=args.exe_steps,
+-                    ddim_steps=args.ddim_steps,
+-                    ddim_eta=args.ddim_eta,
+-                    unconditional_guidance_scale=args.
+-                    unconditional_guidance_scale,
+-                    fs=model_input_fs,
+-                    timestep_spacing=args.timestep_spacing,
+-                    guidance_rescale=args.guidance_rescale,
+-                    sim_mode=False)
++                amp_ctx = torch.autocast(device_type='cuda', dtype=torch.float16) if args.amp else nullcontext()
++                with amp_ctx:
++                    pred_videos_0, pred_actions, _ = image_guided_synthesis_sim_mode(
++                        model,
++                        sample['instruction'],
++                        observation,
++                        noise_shape,
++                        action_cond_step=args.exe_steps,
++                        ddim_steps=args.ddim_steps,
++                        ddim_eta=args.ddim_eta,
++                        unconditional_guidance_scale=args.
++                        unconditional_guidance_scale,
++                        fs=model_input_fs,
++                        timestep_spacing=args.timestep_spacing,
++                        guidance_rescale=args.guidance_rescale,
++                        sim_mode=False)
+ 
+                 # Update future actions in the observation queues
+                 for idx in range(len(pred_actions[0])):
+@@ -615,20 +618,22 @@
+ 
+                 # Interaction with the world-model
+                 print(f'>>> Step {itr}: interacting with world model ...')
+-                pred_videos_1, _, pred_states = image_guided_synthesis_sim_mode(
+-                    model,
+-                    "",
+-                    observation,
+-                    noise_shape,
+-                    action_cond_step=args.exe_steps,
+-                    ddim_steps=args.ddim_steps,
+-                    ddim_eta=args.ddim_eta,
+-                    unconditional_guidance_scale=args.
+-                    unconditional_guidance_scale,
+-                    fs=model_input_fs,
+-                    text_input=False,
+-                    timestep_spacing=args.timestep_spacing,
+-                    guidance_rescale=args.guidance_rescale)
++                amp_ctx = torch.autocast(device_type='cuda', dtype=torch.float16) if args.amp else nullcontext()
++                with amp_ctx:
++                    pred_videos_1, _, pred_states = image_guided_synthesis_sim_mode(
++                        model,
++                        "",
++                        observation,
++                        noise_shape,
++                        action_cond_step=args.exe_steps,
++                        ddim_steps=args.ddim_steps,
++                        ddim_eta=args.ddim_eta,
++                        unconditional_guidance_scale=args.
++                        unconditional_guidance_scale,
++                        fs=model_input_fs,
++                        text_input=False,
++                        timestep_spacing=args.timestep_spacing,
++                        guidance_rescale=args.guidance_rescale)
+ 
+                 for idx in range(args.exe_steps):
+                     observation = {
+@@ -790,6 +795,12 @@
+         default=40,
+         help="num of iteration to interact with the world model",
+     )
++    parser.add_argument(
++        "--amp",
++        action="store_true",
++        default=False,
++        help="run model inference under CUDA float16 autocast",
++    )
+     parser.add_argument("--zero_pred_state",
+                         action='store_true',
+                         default=False,

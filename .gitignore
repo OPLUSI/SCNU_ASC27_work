@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+*.ckpt
+*.safetensors
+!code/eval_data/**/stats.safetensors
+open_clip_pytorch_model.bin
+.venv/
+venv/
+miniconda3/
+*.tar.gz
+*.zip

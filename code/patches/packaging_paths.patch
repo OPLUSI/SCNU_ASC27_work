@@ -1,0 +1,25 @@
+--- a/src/unifolm_wma/modules/encoders/condition.py
++++ b/src/unifolm_wma/modules/encoders/condition.py
+@@ -1,3 +1,4 @@
++import os
+ import torch
+ import torch.nn as nn
+ import kornia
+@@ -291,7 +292,7 @@
+         model, _, _ = open_clip.create_model_and_transforms(
+             arch,
+             device=torch.device('cpu'),
+-            pretrained="/root/autodl-tmp/openclip_cache/open_clip_pytorch_model.bin",
++            pretrained=os.environ.get("OPENCLIP_PRETRAINED_PATH", "/root/autodl-tmp/openclip_cache/open_clip_pytorch_model.bin"),
+         )
+         del model.transformer
+         self.model = model
+@@ -366,7 +367,7 @@
+         model, _, _ = open_clip.create_model_and_transforms(
+             arch,
+             device=torch.device('cpu'),
+-            pretrained="/root/autodl-tmp/openclip_cache/open_clip_pytorch_model.bin",
++            pretrained=os.environ.get("OPENCLIP_PRETRAINED_PATH", "/root/autodl-tmp/openclip_cache/open_clip_pytorch_model.bin"),
+         )
+         del model.transformer
+         self.model = model

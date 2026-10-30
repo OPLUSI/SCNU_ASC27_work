@@ -1,0 +1,74 @@
+EXPERIMENT label=opt_amp_fastio_gpuaccum_nozero scenario=unitree_z1_dual_arm_cleanup_pencils case=2 ddim_steps=50 n_iter=8 exe_steps=16 frame_stride=4 amp=1 eta=1.0 zero_state=0 guidance_rescale=0.7 script=scripts/evaluation/world_model_interaction_optimized.py
+2026-10-29T06:25:23+08:00
+2026-10-29 06:25:27.874150: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-10-29 06:25:27.888782: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-10-29 06:25:27.905817: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8454] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-10-29 06:25:27.911420: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1452] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-10-29 06:25:27.925263: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-10-29 06:25:28.730428: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+Global seed set to 123
+INFO:mainlogger:LatentVisualDiffusion: Running in v-prediction mode
+INFO:unifolm_wma.models.diffusion_head.conditional_unet1d:number of parameters: 5.010531e+08
+INFO:unifolm_wma.models.diffusion_head.conditional_unet1d:number of parameters: 5.010531e+08
+AE working on z of shape (1, 4, 32, 32) = 4096 dimensions.
+INFO:root:Loaded ViT-H-14 model config.
+INFO:root:Loaded ViT-H-14 model config.
+INFO:root:Loading pretrained ViT-H-14 weights (/root/autodl-tmp/openclip_cache/open_clip_pytorch_model.bin).
+>>> model checkpoint loaded.
+>>> Load pre-trained model ...
+INFO:root:***** Configing Data *****
+>>> unitree_z1_stackbox: 1 data samples loaded.
+>>> unitree_z1_stackbox: data stats loaded.
+>>> unitree_z1_stackbox: normalizer initiated.
+>>> unitree_z1_dual_arm_stackbox: 1 data samples loaded.
+>>> unitree_z1_dual_arm_stackbox: data stats loaded.
+>>> unitree_z1_dual_arm_stackbox: normalizer initiated.
+>>> unitree_z1_dual_arm_stackbox_v2: 1 data samples loaded.
+>>> unitree_z1_dual_arm_stackbox_v2: data stats loaded.
+>>> unitree_z1_dual_arm_stackbox_v2: normalizer initiated.
+>>> unitree_z1_dual_arm_cleanup_pencils: 1 data samples loaded.
+>>> unitree_z1_dual_arm_cleanup_pencils: data stats loaded.
+>>> unitree_z1_dual_arm_cleanup_pencils: normalizer initiated.
+>>> unitree_g1_pack_camera: 1 data samples loaded.
+>>> unitree_g1_pack_camera: data stats loaded.
+>>> unitree_g1_pack_camera: normalizer initiated.
+>>> Dataset is successfully loaded ...
+>>> Generate 16 frames under each generation ...
+  0%|          | 0/8 [00:00<?, ?it/s] 12%|█▎        | 1/8 [00:47<05:32, 47.45s/it] 25%|██▌       | 2/8 [01:32<04:36, 46.12s/it] 38%|███▊      | 3/8 [02:17<03:48, 45.61s/it] 50%|█████     | 4/8 [03:03<03:02, 45.55s/it] 62%|██████▎   | 5/8 [03:48<02:16, 45.38s/it] 75%|███████▌  | 6/8 [04:33<01:30, 45.37s/it] 88%|████████▊ | 7/8 [05:18<00:45, 45.39s/it]100%|██████████| 8/8 [06:03<00:00, 45.28s/it]100%|██████████| 8/8 [06:03<00:00, 45.50s/it]
+>>> Step 0: generating actions ...
+>>> Step 0: interacting with world model ...
+>>>>>>>>>>>>>>>>>>>>>>>>
+>>> Step 1: generating actions ...
+>>> Step 1: interacting with world model ...
+>>>>>>>>>>>>>>>>>>>>>>>>
+>>> Step 2: generating actions ...
+>>> Step 2: interacting with world model ...
+>>>>>>>>>>>>>>>>>>>>>>>>
+>>> Step 3: generating actions ...
+>>> Step 3: interacting with world model ...
+>>>>>>>>>>>>>>>>>>>>>>>>
+>>> Step 4: generating actions ...
+>>> Step 4: interacting with world model ...
+>>>>>>>>>>>>>>>>>>>>>>>>
+>>> Step 5: generating actions ...
+>>> Step 5: interacting with world model ...
+>>>>>>>>>>>>>>>>>>>>>>>>
+>>> Step 6: generating actions ...
+>>> Step 6: interacting with world model ...
+>>>>>>>>>>>>>>>>>>>>>>>>
+>>> Step 7: generating actions ...
+>>> Step 7: interacting with world model ...
+>>>>>>>>>>>>>>>>>>>>>>>>
+
+real	7m5.552s
+user	27m28.485s
+sys	0m28.518s
+2026-10-29T06:32:28+08:00
+Comparing:
+Ref: /root/autodl-tmp/asc27/ASC26-Embodied-World-Model-Optimization-main/unitree_z1_dual_arm_cleanup_pencils/case2/unitree_z1_dual_arm_cleanup_pencils_case2.mp4
+Pred: /root/asc27_system_results/optimization_runs/opt_amp_fastio_gpuaccum_nozero/unitree_z1_dual_arm_cleanup_pencils/case2/inference/50_full_fs4.mp4
+------------------------------
+Video PSNR: 22.9215 dB
+------------------------------
+Result saved to /root/asc27_system_results/optimization_runs/opt_amp_fastio_gpuaccum_nozero/unitree_z1_dual_arm_cleanup_pencils/case2/psnr.json

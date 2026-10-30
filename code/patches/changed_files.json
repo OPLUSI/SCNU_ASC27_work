@@ -1,0 +1,11 @@
+{
+  "comparison": "local extracted original source vs experimental working project",
+  "upstream_commit_verified": false,
+  "experimental_changed_files": [
+    "src/unifolm_wma/modules/encoders/condition.py",
+    "scripts/evaluation/world_model_interaction.py",
+    "scripts/evaluation/world_model_interaction_optimized.py",
+    "scripts/evaluation/world_model_interaction_policy_sim.py"
+  ],
+  "packaging_only_change": "src/unifolm_wma/modules/encoders/condition.py"
+}

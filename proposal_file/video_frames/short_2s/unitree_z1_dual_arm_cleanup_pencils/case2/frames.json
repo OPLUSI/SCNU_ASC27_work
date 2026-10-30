@@ -1,0 +1,24 @@
+{
+  "source_video": "experiments/short_2s/unitree_z1_dual_arm_cleanup_pencils/case2/50_full_fs4.mp4",
+  "video_sha256": "2d9b506b1a59b2c94ad452cc23d97015b9aa1c928c5c3d8bee057903d205d89e",
+  "fps": 8.0,
+  "frame_count": 16,
+  "indexing": "zero-based",
+  "frames": [
+    {
+      "file": "frame_first.png",
+      "zero_based_frame": 0,
+      "time_seconds": 0.0
+    },
+    {
+      "file": "frame_middle.png",
+      "zero_based_frame": 8,
+      "time_seconds": 1.0
+    },
+    {
+      "file": "frame_last.png",
+      "zero_based_frame": 15,
+      "time_seconds": 1.875
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "collected_at_utc": "2026-10-30T09:47:38.717163+00:00",
+  "collection_mode": "CPU-only packaging session; not a new GPU hardware measurement",
+  "python": "3.10.18 (main, Jun  5 2025, 13:14:17) [GCC 11.2.0]",
+  "packages": {
+    "torch": "2.3.1",
+    "torchvision": "0.18.1",
+    "xformers": "0.0.27",
+    "open-clip-torch": "2.22.0",
+    "numpy": "1.24.2",
+    "pytorch-lightning": "1.9.3",
+    "diffusers": "0.30.2",
+    "transformers": "4.40.1",
+    "Pillow": "9.5.0",
+    "imageio": "2.35.1",
+    "moviepy": "1.0.3",
+    "h5py": "3.16.0"
+  },
+  "experiment_gpu": "NVIDIA RTX 3090 24 GB (recorded experiment platform)",
+  "checkpoint_path": "/root/autodl-tmp/checkpoints/UnifoLM-WMA-0-Dual/unifolm_wma_dual.ckpt",
+  "checkpoint_bytes": 16719237688,
+  "openclip_path": "/root/autodl-tmp/openclip_cache/open_clip_pytorch_model.bin",
+  "openclip_bytes": 3944692325
+}
